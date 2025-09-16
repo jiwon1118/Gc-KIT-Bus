@@ -56,6 +56,7 @@ export default function AdminBusesPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
+      const selectedRoute = routes.find(r => r.id === parseInt(formData.route_id))
       const submitData = {
         bus_number: formData.bus_number,
         route_id: parseInt(formData.route_id),
@@ -63,7 +64,9 @@ export default function AdminBusesPage() {
         bus_type: formData.bus_type,
         total_seats: formData.total_seats,
         departure_time: formData.departure_time,
-        arrival_time: formData.arrival_time
+        arrival_time: formData.arrival_time,
+        route: selectedRoute?.name || '',
+        destination: selectedRoute?.destination || ''
       }
 
       if (editingBus) {

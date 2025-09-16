@@ -236,7 +236,7 @@ export default function UserReservationsPage() {
                             // 내 좌석을 선택된 상태로 설정
                             const seatsWithMyReservation = seats.map(seat => ({
                               ...seat,
-                              status: seat.id === reservation.seat_number ? 'available' : 'available'
+                              status: (seat.id === reservation.seat_number ? 'available' : 'available') as 'available' | 'occupied' | 'selected'
                             }))
 
                             return (

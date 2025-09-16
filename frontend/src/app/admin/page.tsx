@@ -149,7 +149,7 @@ export default function AdminDashboard() {
           // Mark reserved seats as occupied
           const updatedSeats = generatedSeats.map(seat => ({
             ...seat,
-            status: seatsData.reserved_seat_numbers.includes(seat.id) ? 'occupied' : 'available'
+            status: (seatsData.reserved_seat_numbers.includes(seat.id) ? 'occupied' : 'available') as 'available' | 'occupied' | 'selected'
           }))
 
           setSelectedBusSeats(updatedSeats)
@@ -239,7 +239,7 @@ export default function AdminDashboard() {
       const generatedSeats = generateBusSeats(selectedBusForSeats.bus_type)
       const updatedSeats = generatedSeats.map(seat => ({
         ...seat,
-        status: seatsData.reserved_seat_numbers.includes(seat.id) ? 'occupied' : 'available'
+        status: (seatsData.reserved_seat_numbers.includes(seat.id) ? 'occupied' : 'available') as 'available' | 'occupied' | 'selected'
       }))
       setSelectedBusSeats(updatedSeats)
 
@@ -281,7 +281,7 @@ export default function AdminDashboard() {
       const generatedSeats = generateBusSeats(selectedBusForSeats.bus_type)
       const updatedSeats = generatedSeats.map(seat => ({
         ...seat,
-        status: seatsData.reserved_seat_numbers.includes(seat.id) ? 'occupied' : 'available'
+        status: (seatsData.reserved_seat_numbers.includes(seat.id) ? 'occupied' : 'available') as 'available' | 'occupied' | 'selected'
       }))
       setSelectedBusSeats(updatedSeats)
 

@@ -87,7 +87,7 @@ export default function UserDashboard() {
       // Mark reserved seats as occupied
       const updatedSeats = generatedSeats.map(seat => ({
         ...seat,
-        status: seatsData.reserved_seat_numbers.includes(seat.id) ? 'occupied' : 'available'
+        status: (seatsData.reserved_seat_numbers.includes(seat.id) ? 'occupied' : 'available') as 'available' | 'occupied' | 'selected'
       }))
 
       setSelectedSeats(updatedSeats)

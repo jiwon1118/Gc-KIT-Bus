@@ -21,7 +21,7 @@ export default function DashboardLayout({
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   // 임시로 인증 체크 비활성화 (데모용)
-  const skipAuth = true
+  const skipAuth = false
 
   if (!skipAuth) {
     if (loading) {

@@ -15,12 +15,6 @@ export default function UserReservationsPage() {
   const router = useRouter()
 
   useEffect(() => {
-    const token = localStorage.getItem('token')
-    if (!token) {
-      router.push('/login')
-      return
-    }
-
     loadReservations()
   }, [router])
 
@@ -234,7 +228,7 @@ export default function UserReservationsPage() {
                           </div>
                         </div>
 
-                        <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                        <div className="bg-gray-50 dark:bg-gray-700 p-2 sm:p-4 rounded-lg overflow-x-auto">
                           {(() => {
                             const busType = reservation.bus_type || '28-seat'
                             const seats = generateBusSeats(busType)

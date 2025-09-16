@@ -58,14 +58,14 @@ export default function BusSeatLayout({ seats, busType, onSeatSelect, isDriver =
       if (is45SeatLastRow) {
         // 45인승 마지막 열: 5명 좌석 (통로에도 좌석)
         rows.push(
-          <div key={row} className="flex items-center justify-center gap-3 sm:gap-4 mb-4 p-2">
+          <div key={row} className="flex items-center justify-center gap-1 sm:gap-2 md:gap-3 mb-2 sm:mb-4 p-1 sm:p-2">
             {/* 좌석 번호 표시 */}
-            <div className="w-8 text-xs text-gray-600 dark:text-gray-300 text-center font-medium bg-orange-100 dark:bg-orange-900 rounded py-1">
+            <div className="w-6 sm:w-8 text-xs text-gray-600 dark:text-gray-300 text-center font-medium bg-orange-100 dark:bg-orange-900 rounded py-1">
               {row}
             </div>
 
             {/* 5명 좌석을 모두 나열 */}
-            <div className="flex gap-3 sm:gap-4">
+            <div className="flex gap-1 sm:gap-2 md:gap-3">
               {rowSeats.map(seat => (
                 <SeatIcon
                   key={seat.id}
@@ -84,14 +84,14 @@ export default function BusSeatLayout({ seats, busType, onSeatSelect, isDriver =
       } else if (is28SeatLastRow) {
         // 28인승 마지막 열: 4명 좌석 (통로에도 좌석)
         rows.push(
-          <div key={row} className="flex items-center justify-center gap-3 sm:gap-4 mb-4 p-2">
+          <div key={row} className="flex items-center justify-center gap-1 sm:gap-2 md:gap-3 mb-2 sm:mb-4 p-1 sm:p-2">
             {/* 좌석 번호 표시 */}
-            <div className="w-8 text-xs text-gray-600 dark:text-gray-300 text-center font-medium bg-purple-100 dark:bg-purple-900 rounded py-1">
+            <div className="w-6 sm:w-8 text-xs text-gray-600 dark:text-gray-300 text-center font-medium bg-purple-100 dark:bg-purple-900 rounded py-1">
               {row}
             </div>
 
             {/* 4명 좌석을 모두 나열 */}
-            <div className="flex gap-3 sm:gap-4">
+            <div className="flex gap-1 sm:gap-2 md:gap-3">
               {rowSeats.map(seat => (
                 <SeatIcon
                   key={seat.id}
@@ -110,14 +110,14 @@ export default function BusSeatLayout({ seats, busType, onSeatSelect, isDriver =
       } else {
         // 일반 행: 2-1 또는 2-2 배치
         rows.push(
-          <div key={row} className="flex items-center justify-center gap-3 sm:gap-4 md:gap-3 mb-4 p-2">
+          <div key={row} className="flex items-center justify-center gap-1 sm:gap-2 md:gap-3 mb-2 sm:mb-4 p-1 sm:p-2">
             {/* 좌석 번호 표시 */}
-            <div className="w-8 text-xs text-gray-600 dark:text-gray-300 text-center font-medium bg-gray-100 dark:bg-gray-700 rounded py-1">
+            <div className="w-6 sm:w-8 text-xs text-gray-600 dark:text-gray-300 text-center font-medium bg-gray-100 dark:bg-gray-700 rounded py-1">
               {row}
             </div>
 
             {/* 왼쪽 좌석들 (col 1, 2) */}
-            <div className="flex gap-3 sm:gap-4">
+            <div className="flex gap-1 sm:gap-2 md:gap-3">
               {rowSeats
                 .filter(seat => seat.col <= 2)
                 .map(seat => (
@@ -136,12 +136,12 @@ export default function BusSeatLayout({ seats, busType, onSeatSelect, isDriver =
             </div>
 
             {/* 통로 */}
-            <div className="w-10 sm:w-12 border-l-2 border-r-2 border-gray-300 dark:border-gray-600 border-dashed h-12 flex items-center justify-center text-sm text-gray-400 bg-gray-50 dark:bg-gray-800 rounded">
+            <div className="w-6 sm:w-8 md:w-10 border-l-2 border-r-2 border-gray-300 dark:border-gray-600 border-dashed h-8 sm:h-10 md:h-12 flex items-center justify-center text-xs sm:text-sm text-gray-400 bg-gray-50 dark:bg-gray-800 rounded">
               <span className="text-gray-400">🚶</span>
             </div>
 
             {/* 오른쪽 좌석들 (col 4, 5) */}
-            <div className="flex gap-3 sm:gap-4">
+            <div className="flex gap-1 sm:gap-2 md:gap-3">
               {rowSeats
                 .filter(seat => seat.col > 2)
                 .map(seat => (
@@ -167,7 +167,7 @@ export default function BusSeatLayout({ seats, busType, onSeatSelect, isDriver =
   }
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg p-6 sm:p-8 shadow-lg border border-gray-200 dark:border-gray-700 min-w-fit">
+    <div className="bg-white dark:bg-gray-800 rounded-lg p-2 sm:p-4 md:p-6 shadow-lg border border-gray-200 dark:border-gray-700 overflow-x-auto max-w-full">
       <div className="mb-6 text-center">
         <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 mb-3">
           버스 좌석 배치도
@@ -182,34 +182,34 @@ export default function BusSeatLayout({ seats, busType, onSeatSelect, isDriver =
 
       <div className="relative">
         {/* 운전석을 1열 바로 위 1번 2번 사이에 배치 */}
-        <div className="flex items-center justify-center gap-3 sm:gap-4 md:gap-3 mb-3 p-2">
+        <div className="flex items-center justify-center gap-1 sm:gap-2 md:gap-3 mb-2 sm:mb-3 p-1 sm:p-2">
           {/* 좌석 번호 공간 (빈 공간) */}
-          <div className="w-8"></div>
+          <div className="w-6 sm:w-8"></div>
 
           {/* 왼쪽 좌석들 공간 - 1번 좌석 위치 */}
-          <div className="flex gap-2 sm:gap-3">
-            <div className="w-12 h-12 sm:w-14 sm:h-14"></div>
+          <div className="flex gap-1 sm:gap-2">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"></div>
           </div>
 
           {/* 운전석 (1번과 2번 사이) */}
-          <div className="bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 px-3 py-2 rounded-lg text-sm font-medium flex items-center gap-1 min-w-[70px] justify-center">
+          <div className="bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 px-2 sm:px-3 py-1 sm:py-2 rounded-lg text-xs sm:text-sm font-medium flex items-center gap-1 min-w-[50px] sm:min-w-[70px] justify-center">
             <span>🚗</span>
             운전석
           </div>
 
           {/* 2번 좌석 위치 */}
-          <div className="flex gap-2 sm:gap-3">
-            <div className="w-12 h-12 sm:w-14 sm:h-14"></div>
+          <div className="flex gap-1 sm:gap-2">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"></div>
           </div>
 
           {/* 통로 공간 */}
-          <div className="w-8 sm:w-10"></div>
+          <div className="w-4 sm:w-6 md:w-8"></div>
 
           {/* 오른쪽 좌석들 공간 */}
-          <div className="flex gap-2 sm:gap-3">
-            <div className="w-12 h-12 sm:w-14 sm:h-14"></div>
+          <div className="flex gap-1 sm:gap-2">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"></div>
             {busType === '45-seat' && (
-              <div className="w-12 h-12 sm:w-14 sm:h-14"></div>
+              <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"></div>
             )}
           </div>
         </div>

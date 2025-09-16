@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/jacob/code/Gc-KIT-Bus/backend/**)",
+      "Bash(curl:*)",
+      "Bash(python:*)",
+      "Bash(source:*)",
+      "Read(//tmp/**)",
+      "Bash(lsof:*)",
+      "Bash(kill:*)",
+      "Bash(uvicorn:*)",
+      "Read(//Users/jacob/code/Gc-KIT-Bus/**)",
+      "Bash(npm run dev:*)",
+      "Bash(node:*)",
+      "Bash(tee:*)",
+      "Bash(find:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -80,3 +80,5 @@ venv.bak/
 *.tmp
 *.temp
 
+# Claude
+.claude/*

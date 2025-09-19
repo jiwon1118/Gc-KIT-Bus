@@ -1,0 +1,19 @@
+[project]
+name = "Gc-KIT-Bus"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "jiwon1118", email = "b23386585@gmail.com"},
+]
+dependencies = ["uvicorn[standard]>=0.35.0", "fastapi>=0.116.2", "sqlalchemy>=2.0.43", "alembic>=1.16.5", "python-multipart>=0.0.20", "python-jose[cryptography]>=3.5.0", "passlib[bcrypt]>=1.7.4", "python-dotenv>=1.1.1", "pydantic>=2.11.9", "pydantic-settings>=2.10.1", "email-validator>=2.3.0", "psycopg2-binary>=2.9.10"]
+requires-python = ">=3.12"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true
